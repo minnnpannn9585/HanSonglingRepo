@@ -38,9 +38,6 @@ public class BagSpawner : MonoBehaviour
 
     void Update()
     {
-        if (currentHand == null || isOnCooldown || popcornPrefab == null || spawnPoint == null || gripActionRef == null || gripActionRef.action == null)
-            return;
-
         bool pressed = gripActionRef.action.IsPressed();
 
         if (pressed && heldPopcorn == null)
@@ -66,8 +63,8 @@ public class BagSpawner : MonoBehaviour
         var rb = go.GetComponent<Rigidbody>();
         if (rb != null) rb.isKinematic = true;
 
-        // parent to the interactor's attach transform if available, otherwise to interactor transform
-        Transform attach = currentHand.attachTransform != null ? currentHand.attachTransform : currentHand.transform;
+        Transform attach = currentHand.attachTransform != null ? 
+            currentHand.attachTransform : currentHand.transform;
         go.transform.SetParent(attach, worldPositionStays: false);
         go.transform.localPosition = Vector3.zero;
         go.transform.localRotation = Quaternion.identity;

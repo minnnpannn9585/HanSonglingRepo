@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Gwangju_3D asset/Scenes/26_GwangjuTheater_Inner.unity
-    guid: 12299d3dd872c6142aaf6bf89c0ba115
+    path: Assets/Gwangju_3D asset/Scenes/26_GwangjuTheater_BakeLight.unity
+    guid: 93331f4e0957e0f4d96d71357592366e
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 80cb5ac424d720941ab98939ec1fe2d7,
       type: 2}

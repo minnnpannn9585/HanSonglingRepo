@@ -13,6 +13,31 @@ public class LeftObjectSwitch : MonoBehaviour
     bool isPopcornActive = false;
     bool isPhoneActive = false;
 
+    bool ringTriggered = false;
+    public GameObject imageRing;
+    public GameObject imageMain;
+    public GameObject imageCamera;
+    public GameObject imageList;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("PhoneRing") && !ringTriggered)
+        {
+            ringTriggered = true;
+
+            hand.SetActive(false);
+            phone.SetActive(true);
+            popcorn.SetActive(false);
+            isPhoneActive = true;
+            isPopcornActive = false;
+
+            imageRing.SetActive(true);
+            imageMain.SetActive(false);
+            imageCamera.SetActive(false);
+            imageList.SetActive(false);
+        }
+    }
+
     private void Awake()
     {
         phone = transform.GetChild(0).gameObject;
